@@ -17,4 +17,11 @@ summary(cfa)
 
 lavaanPlot2(cfa_mean)
 
-  
+##Hate to break it to you, this is incorrect
+fa_model2 <- '
+ CFA / measurement model
+dem60 =~ y1 + y2 +y3 +y4
+dem65 =~ y5 + y6 + y7 +y8'
+
+cfa2 <- sem(cfa_model2, data= df01)
+cfa_mean2 <- sem(cfa_model2, data= df01, meanstructure = TRUE)
